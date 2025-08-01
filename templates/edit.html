@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Meeting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Meeting</h1>
+        <form method="POST">
+            <input type="text" name="title" value="{{ meeting.title }}" required>
+            <input type="date" name="date" value="{{ meeting.datetime.split(' ')[0] }}" required>
+            <input type="time" name="time" value="{{ meeting.datetime.split(' ')[1] }}" required>
+            <input type="number" name="reminder" value="10" required>
+            <button type="submit">Update Meeting</button>
+        </form>
+        <a href="/">Back</a>
+    </div>
+</body>
+</html>
